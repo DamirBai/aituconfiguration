@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Configurator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="conf.js"></script>
+</head>
+<body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+    body{
+        font-family: 'Comic Sans MS', sans-serif;
+    }
+</style>
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img src="aitu-logo-2-600x315.png" alt="AITU" style="width:75px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="configurator.html">Configurator</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="shops.html">Shops</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="components.html" role="button" data-bs-toggle="dropdown">Components</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="Videocards.html">Video card</a></li>
+                        <li><a class="dropdown-item" href="CPUs.html">CPU</a></li>
+                        <li><a class="dropdown-item" href="RAM.html">RAM</a></li>
+                        <li><a class="dropdown-item" href="ROM.html">ROM</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav><div class="container">
+    <br>
+    <h1>Configurator</h1>
+    <br>
+    <h2>Assemble your PC</h2>
+    <br>
+    <h3>Choose CPU</h3>
+    <div class="list-group">
+        <button type="button" onclick="cpu1()" ondragstart="drag(event)" draggable="true" id="cpu1" class="list-group-item list-group-item-action">Intel Core i5-13600K</button>
+        <button type="button" onclick="cpu2()" ondragstart="drag(event)" draggable="true" id="cpu2" class="list-group-item list-group-item-action">Intel Core i5 13400F</button>
+        <button type="button" onclick="cpu3()" ondragstart="drag(event)" draggable="true" id="cpu3" class="list-group-item list-group-item-action">AMD Ryzen 7 7700</button>
+    </div>
+    <br>
+    <h3>Choose Motherboard</h3>
+    <div class="list-group">
+        <button type="button" onclick="mother1()" ondragstart="drag(event)" draggable="true" id="mother1" class="list-group-item list-group-item-action">Gigabyte Z790 AORUS ELITE AX</button>
+        <button type="button" onclick="mother2()" ondragstart="drag(event)" draggable="true" id="mother2" class="list-group-item list-group-item-action">MSI MPG Z790 Carbon WiFi</button>
+        <button type="button" onclick="mother3()" ondragstart="drag(event)" draggable="true" id="mother3" class="list-group-item list-group-item-action">ASUS TUF Gaming Z790-Plus WiFi D4</button>
+        <button type="button" onclick="mother4()" ondragstart="drag(event)" draggable="true" id="mother4" class="list-group-item list-group-item-action">ASUS ROG Strix B650E-F Gaming WiFi</button>
+        <button type="button" onclick="mother5()" ondragstart="drag(event)" draggable="true" id="mother5" class="list-group-item list-group-item-action">Gigabyte X670 AORUS Elite AX</button>
+    </div>
+    <br>
+    <h3>Choose amount of RAM(it's all DDR5 for now because we don't have any other CPUs)</h3>
+    <div class="list-group">
+        <button type="button" onclick="ram1()" ondragstart="drag(event)" draggable="true" id="ram1" class="list-group-item list-group-item-action">16 GB</button>
+        <button type="button" onclick="ram2()" ondragstart="drag(event)" draggable="true" id="ram2" class="list-group-item list-group-item-action">32 GB</button>
+        <button type="button" onclick="ram3()" ondragstart="drag(event)" draggable="true" id="ram3" class="list-group-item list-group-item-action">64 GB</button>
+    </div>
+    <br>
+    <h3>Choose GPU</h3>
+    <div class="list-group">
+        <button type="button" onclick="gpu1()" ondragstart="drag(event)" draggable="true" id="gpu1" class="list-group-item list-group-item-action">NVIDIA RTX 4090</button>
+        <button type="button" onclick="gpu2()" ondragstart="drag(event)" draggable="true" id="gpu2" class="list-group-item list-group-item-action">NVIDIA RTX 4060</button>
+        <button type="button" onclick="gpu3()" ondragstart="drag(event)" draggable="true" id="gpu3" class="list-group-item list-group-item-action">AMD Radeon RX 7900</button>
+    </div>
+    <br>
+    <h3>Choose power unit(Super Flower Leadex)</h3>
+    <div class="list-group">
+        <button type="button" onclick="pu1()" ondragstart="drag(event)" draggable="true" id="pu1" class="list-group-item list-group-item-action">550Вт</button>
+        <button type="button" onclick="pu2()" ondragstart="drag(event)" draggable="true" id="pu2" class="list-group-item list-group-item-action">750Вт</button>
+        <button type="button" onclick="pu3()" ondragstart="drag(event)" draggable="true" id="pu3" class="list-group-item list-group-item-action">1000Вт</button>
+    </div>
+    <br>
+    <h3>Choose HDD(Seagate)</h3>
+    <div class="list-group">
+        <button type="button" onclick="hdd1()" ondragstart="drag(event)" draggable="true" id="hdd1" class="list-group-item list-group-item-action">1TB</button>
+        <button type="button" onclick="hdd2()" ondragstart="drag(event)" draggable="true" id="hdd2" class="list-group-item list-group-item-action">2TB</button>
+        <button type="button" onclick="hdd3()" ondragstart="drag(event)" draggable="true" id="hdd3" class="list-group-item list-group-item-action">5TB</button>
+    </div>
+    <br>
+    <h3>Choose SSD(Kingston)</h3>
+    <div class="list-group">
+        <button type="button" onclick="ssd1()" ondragstart="drag(event)" draggable="true" id="ssd1" class="list-group-item list-group-item-action">256GB</button>
+        <button type="button" onclick="ssd2()" ondragstart="drag(event)" draggable="true" id="ssd2" class="list-group-item list-group-item-action">512GB</button>
+        <button type="button" onclick="ssd3()" ondragstart="drag(event)" draggable="true" id="ssd3" class="list-group-item list-group-item-action">1TB</button>
+    </div>
+    <br>
+    <h3>Choose Case</h3>
+    <div class="list-group">
+        <button type="button" onclick="case1()" ondragstart="drag(event)" draggable="true" id="case1" class="list-group-item list-group-item-action">Powercase Mistral X4 Mesh LED Black</button type="button" onclick="case1()">
+        <button type="button" onclick="case2()" ondragstart="drag(event)" draggable="true" id="case2" class="list-group-item list-group-item-action">NZXT H510 Elite Black TG</button>
+        <button type="button" onclick="case3()" ondragstart="drag(event)" draggable="true" id="case3" class="list-group-item list-group-item-action">DeepCool MATREXX 55 MESH Black</button>
+    </div>
+    <br>
+    <h3>Your PC: </h3>
+    <ul class="list-group" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <li id="cpu" draggable="true" class="list-group-item">not chosen</li>
+        <li id="mother" draggable="true" class="list-group-item">not chosen</li>
+        <li id="ramType" draggable="true" class="list-group-item">not chosen</li>
+        <li id="ram" draggable="true" class="list-group-item">not chosen</li>
+        <li id="gpu" draggable="true" class="list-group-item">not chosen</li>
+        <li id="power" draggable="true" class="list-group-item">0Вт</li>
+        <li id="hdd" draggable="true" class="list-group-item">not chosen</li>
+        <li id="ssd" draggable="true" class="list-group-item">not chosen</li>
+        <li id="case" draggable="true" class="list-group-item">not chosen</li>
+    </ul>
+    <button type="button" onclick="refresh()">Refresh</button>
+    <button type="button" onclick="reset()">Reset all</button>
+</div>
+</body>
+</html>
