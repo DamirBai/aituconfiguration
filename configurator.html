@@ -150,34 +150,27 @@
         <li id="ssd" draggable="true" class="list-group-item">not chosen</li>
         <li id="case" draggable="true" class="list-group-item">not chosen</li>
     </ul>
-    <button type="button" data-bs-toggle="modal" data-bs-target="#myModal">
+    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#myModal">
         Open to see your PC
     </button>
     <div class="modal fade" id="myModal">
         <div class="modal-dialog">
             <div class="modal-content">
-
-                <!-- Modal Header -->
                 <div class="modal-header">
                     <h3>Your PC: </h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-
-                <!-- Modal body -->
                 <div class="modal-body">
                     <img id="img" src="" alt="pc">
                 </div>
-
-                <!-- Modal footer -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
                 </div>
-
             </div>
         </div>
     </div>
-    <button type="button" onclick="refresh()">Refresh</button>
-    <button type="button" onclick="reset()">Reset all</button>
+    <button class="btn btn-primary" type="button" onclick="refresh()">Refresh</button>
+    <button class="btn btn-primary" type="button" onclick="reset()">Reset all</button>
     <footer class="py-3 my-4 border-top">
         <span class="text-muted">Damir Baigenzhin<br></span>
         <span class="text-muted">progress_04.05@mail.ru<br></span>

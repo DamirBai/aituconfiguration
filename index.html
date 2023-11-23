@@ -70,6 +70,10 @@
     <a href="about.html">Brief information about us.</a>
     <h2 id="cu">Contact us</h2>
     <a href="contact.html">There you can leave your feedback.</a>
+    <h2>How to assemble PC?</h2>
+    <iframe id="myvideo" width="806" height="403" src="https://www.youtube.com/embed/v7MYOpFONCU" title="First Person View PC BUILD Guide! (POV)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <br>
+    <button class="btn btn-primary" onclick="openFullscreen();">Open Video in Fullscreen Mode</button>
     <h3>Quiz about our website</h3>
     <div>
         <h4 id="question">question</h4>
@@ -218,7 +222,6 @@
         document.getElementById("D").innerHTML = document.getElementById("D").innerHTML + " " + questions.answer.D[0];
         let myButton = document.getElementById("myBtn");
         window.onscroll = function() {scrollFunction()};
-
         function scrollFunction() {
             if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
                 myButton.style.display = "block";
@@ -226,10 +229,15 @@
                 myButton.style.display = "none";
             }
         }
-
         function goTop() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
+        }
+        let elem = document.getElementById("myvideo");
+        function openFullscreen() {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            }
         }
     </script>
 </div>

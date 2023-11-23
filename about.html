@@ -15,6 +15,30 @@
         body{
             font-family: 'Comic Sans MS', sans-serif;
         }
+        .photo1{
+            display: none;
+        }
+        .photo2{
+            display: none;
+        }
+        .photo3{
+            display: none;
+        }
+        .photo4{
+            display: none;
+        }
+        .header1:hover + .photo1{
+            display: inline-block;
+        }
+        .header2:hover + .photo2{
+            display: inline-block;
+        }
+        .header3:hover + .photo3{
+            display: inline-block;
+        }
+        .header4:hover + .photo4{
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -73,18 +97,29 @@
     <h2>All employees:</h2>
     <div class="row">
         <div class="col-md-3">
-            <h3>Damir Baigenzhin</h3>
+            <h3 class="header1">Damir Baigenzhin</h3>
+            <img class="photo1" src="photo_2023-09-27_14-42-42.jpg" width="200" alt="Damir">
         </div>
         <div class="col-md-3">
-            <h3>Askar Baigenzhin</h3>
+            <h3 class="header2">Askar Baigenzhin</h3>
+            <img class="photo2" src="askar.jpg" alt="Askar" width="200">
         </div>
         <div class="col-md-3">
-            <h3>Yerbol Baigenzhin</h3>
+            <h3 class="header3">Yerbol Baigenzhin</h3>
+            <img class="photo3" src="yerbol.jpg" alt="Yerbol" width="200">
         </div>
         <div class="col-md-3">
-            <h3>Abay Akhmetov</h3>
+            <h3 class="header4">Abay Akhmetov</h3>
+            <img class="photo4" src="abay.jpg" alt="Abay" width="200">
         </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <footer class="py-3 my-4 border-top">
         <span class="text-muted">Damir Baigenzhin<br></span>
         <span class="text-muted">progress_04.05@mail.ru<br></span>
