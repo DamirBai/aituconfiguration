@@ -56,6 +56,7 @@
     </div>
 </nav>
 <div class="container">
+    <button id="myBtn" onclick="goTop()" type="button" class="btn btn" style="position: fixed; bottom: 20px; right: 30px; z-index: 99; background-color: rgb(240, 240, 240); width: 10%; height: 10%">onTop</button>
     <h1 id="home">Home</h1>
     <h2>Welcome to our website!</h2>
     <p>There you can choose appropriate PC components and assemble your own PC in our configurator!(on dev)</p>
@@ -69,30 +70,168 @@
     <a href="about.html">Brief information about us.</a>
     <h2 id="cu">Contact us</h2>
     <a href="contact.html">There you can leave your feedback.</a>
-    <script>document.getElementById("home").addEventListener("click", function() {
-        window.location.href = "index.html";
-    });
-    document.getElementById("conf").addEventListener("click", function() {
-        window.location.href = "configurator.html";
-    });
-    document.getElementById("shop").addEventListener("click", function() {
-        window.location.href = "shops.html";
-    });
-    document.getElementById("comp").addEventListener("click", function() {
-        window.location.href = "components.html";
-    });
-    document.getElementById("au").addEventListener("click", function() {
-        window.location.href = "about.html";
-    });
-    document.getElementById("cu").addEventListener("click", function() {
-        window.location.href = "contact.html";
-    });</script>
+    <h3>Quiz about our website</h3>
+    <div>
+        <h4 id="question">question</h4>
+        <div class="list-group">
+            <button type="button" onclick='checkAnswer("A")' id="A" class="list-group-item list-group-item-action">A)</button>
+            <button type="button" onclick='checkAnswer("B")' id="B" class="list-group-item list-group-item-action">B)</button>
+            <button type="button" onclick='checkAnswer("C")' id="C" class="list-group-item list-group-item-action">C)</button>
+            <button type="button" onclick='checkAnswer("D")' id="D" class="list-group-item list-group-item-action">D)</button>
+        </div>
+    </div>
+    <br><p>Progress bar:</p>
+    <div class="progress">
+        <div id="progress" class="progress-bar" style="width:0"></div>
+    </div>
     <footer class="py-3 my-4 border-top">
         <span class="text-muted">Damir Baigenzhin<br></span>
         <span class="text-muted">progress_04.05@mail.ru<br></span>
         <span class="text-muted">+7 700 552 25 24<br></span>
         <span class="text-muted">Astana IT University</span>
     </footer>
+    <script>
+        document.getElementById("home").addEventListener("click", function() {
+            window.location.href = "index.html";
+        });
+        document.getElementById("conf").addEventListener("click", function() {
+            window.location.href = "configurator.html";
+        });
+        document.getElementById("shop").addEventListener("click", function() {
+            window.location.href = "shops.html";
+        });
+        document.getElementById("comp").addEventListener("click", function() {
+            window.location.href = "components.html";
+        });
+        document.getElementById("au").addEventListener("click", function() {
+            window.location.href = "about.html";
+        });
+        document.getElementById("cu").addEventListener("click", function() {
+            window.location.href = "contact.html";
+        });
+        let questions = {
+            question: [
+                "How many types of PC components exists:",
+                "Which shop has the best video cards:",
+                "Which shop has best CPUs, RAM, ROM:",
+                "Which shop has best computer accessories:",
+                "Which one is the most powerful video card:",
+                "Which one is the best price-quality video card:",
+                "Which type of RAM is the best:",
+                "Which type of ROM is the best:",
+                "Which CPU is the best:",
+                "Name of the main developer :)"
+            ],
+            answer: {
+                A: ["6", "Technodom", "Белый Ветер", "Sulpak", "NVIDIA RTX 4060", "AMD Radeon RX 7900", "DDR3", "DDR5", "Intel Core i5-13600K", "mir"],
+                B: ["7", "Белый Ветер", "Technodom", "Mechta", "AMD Radeon RX 7900", "NVIDIA RTX 4090", "DDR5", "SSD", "Intel Core i5-13400F", "amir"],
+                C: ["5", "Mechta", "Sulpak", "Белый Ветер", "NVIDIA RTX 4090", "AMD Radeon RX 7600", "DDR4", "HDD", "AMD Ryzen 7 7700", "amir"],
+                D: ["8", "Sulpak", "Mechta", "Technodom", "AMD Radeon RX 7600", "NVIDIA RTX 4060", "DDR6", "DRR", "AMD Ryzen 5 7600K", "amir"]
+            },
+        }
+        let current = 0;
+        let pts = 0;
+        let final = false;
+        function checkAnswer(answer){
+            if(current === 0){
+                if(answer === "B"){
+                    pts+=1;
+                }
+                document.getElementById("progress").style.width = "10%";
+            }
+            else if(current === 1){
+                if(answer === "A"){
+                    pts+=1;
+                }
+                document.getElementById("progress").style.width = "20%";
+            }
+            else if(current === 2){
+                if(answer === "A"){
+                    pts+=1;
+                }
+                document.getElementById("progress").style.width = "30%";
+            }
+            else if(current === 3){
+                if(answer === "B"){
+                    pts+=1;
+                }
+                document.getElementById("progress").style.width = "40%";
+            }
+            else if(current === 4){
+                if(answer === "C"){
+                    pts+=1;
+                }
+                document.getElementById("progress").style.width = "50%";
+            }
+            else if(current === 5){
+                if(answer === "D"){
+                    pts+=1;
+                }
+                document.getElementById("progress").style.width = "60%";
+            }
+            else if(current === 6){
+                if(answer === "B"){
+                    pts+=1;
+                }
+                document.getElementById("progress").style.width = "70%";
+            }
+            else if(current === 7){
+                if(answer === "C"){
+                    pts+=1;
+                }
+                document.getElementById("progress").style.width = "80%";
+            }
+            else if(current === 8){
+                if(answer === "A"){
+                    pts+=1;
+                }
+                document.getElementById("progress").style.width = "90%";
+            }
+            else if(current === 9){
+                if(answer === "D"){
+                    pts+=1;
+                }
+                document.getElementById("question").innerHTML = "You earned " + pts + " points!";
+                final = true;
+                document.getElementById("progress").style.width = "100%";
+                document.getElementById("A").style.display = "none";
+                document.getElementById("B").style.display = "none";
+                document.getElementById("C").style.display = "none";
+                document.getElementById("D").style.display = "none";
+            }
+            if(!final){
+                current+=1;
+                submit();
+            }
+        }
+        function submit(){
+            document.getElementById("question").innerHTML = questions.question[current];
+            document.getElementById("A").innerHTML = "A) " + questions.answer.A[current];
+            document.getElementById("B").innerHTML = "B) " + questions.answer.B[current];
+            document.getElementById("C").innerHTML = "C) " + questions.answer.C[current];
+            document.getElementById("D").innerHTML = "D) " + questions.answer.D[current];
+        }
+        document.getElementById("question").innerHTML = questions.question[current];
+        document.getElementById("A").innerHTML = document.getElementById("A").innerHTML + " " + questions.answer.A[0];
+        document.getElementById("B").innerHTML = document.getElementById("B").innerHTML + " " + questions.answer.B[0];
+        document.getElementById("C").innerHTML = document.getElementById("C").innerHTML + " " + questions.answer.C[0];
+        document.getElementById("D").innerHTML = document.getElementById("D").innerHTML + " " + questions.answer.D[0];
+        let myButton = document.getElementById("myBtn");
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
+                myButton.style.display = "block";
+            } else {
+                myButton.style.display = "none";
+            }
+        }
+
+        function goTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
 </div>
 </body>
 </html>

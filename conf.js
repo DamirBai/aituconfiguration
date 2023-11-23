@@ -317,12 +317,31 @@ function ssd3(){
 }
 function case1(){
     PC.case = "Powercase Mistral X4 Mesh LED Black";
+    document.getElementById("img").src = "pcs/powercase.jpg";
+    document.getElementById("img").width = "500";
 }
 function case2(){
     PC.case = "NZXT H510 Elite Black TG";
+    document.getElementById("img").src = "pcs/nzxt.png";
+    document.getElementById("img").width = "200";
 }
 function case3(){
     PC.case = "DeepCool MATREXX 55 MESH Black";
+    document.getElementById("img").src = "pcs/deepcool.jpg";
+    document.getElementById("img").width = "200";
+}
+let curPC = document.getElementById("case");
+if(curPC === "Powercase Mistral X4 Mesh LED Black"){
+    document.getElementById("img").src = "pcs/powercase.jpg";
+    document.getElementById("img").width = "500";
+}
+else if(curPC === "NZXT H510 Elite Black TG"){
+    document.getElementById("img").src = "pcs/nzxt.png";
+    document.getElementById("img").width = "200";
+}
+else if(curPC === "DeepCool MATREXX 55 MESH Black"){
+    document.getElementById("img").src = "pcs/deepcool.jpg";
+    document.getElementById("img").width = "200";
 }
 document.getElementById("cpu").innerHTML = PC.cpu;
 document.getElementById("mother").innerHTML = PC.mother;
