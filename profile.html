@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>CPUs</title>
+    <title>User Profile</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -55,12 +55,18 @@
             <button type="button" class="btn btn-primary ms-auto" onclick="window.location.href = '/';">Register</button>
         </div>
     </div>
-</nav><div class="container mt-3">
-    <h2>CPUs</h2>
-    <div class="list-group">
-        <a href="https://shop.kz/search/?q=Intel%20Core%20i5-13600K" class="list-group-item list-group-item-action">Intel Core i5-13600K is the most powerful</a>
-        <a href="https://shop.kz/offer/protsessor-intel-core-i5-13400f-lga1700-oem/" class="list-group-item list-group-item-action">Intel Core i5 13400F is the best price-quality CPU</a>
-        <a href="https://shop.kz/search/?q=AMD%20Ryzen%207%207700" class="list-group-item list-group-item-action">AMD Ryzen 7 7700 is the most powerful CPU amongst AMD</a>
+</nav>
+<div class="container">
+    <h1>User Profile</h1>
+    <div class="profile-info">
+        <h2>User Information</h2>
+        <p id="name"><strong>Name:</strong></p>
+        <p id="email"><strong>Email:</strong></p>
+    </div>
+    <div class="profile-actions">
+        <h2>Actions</h2>
+        <button class="btn btn-primary">Edit Profile</button>
+        <button class="btn btn-danger">Delete Account</button>
     </div>
     <footer class="py-3 my-4 border-top">
         <span class="text-muted">Damir Baigenzhin<br></span>
@@ -69,6 +75,20 @@
         <span class="text-muted">Astana IT University</span>
     </footer>
 </div>
+<script>
+    function fetchUserData() {
+        // Извлечение ID пользователя из IP-адреса запроса
+        let id = '{{ . }}'; // Должен быть заменен на фактическое значение ID пользователя
+        fetch('/api/users/' + id)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('name').textContent = data.name;
+                document.getElementById('email').textContent = "Email: " + data.email; // Отображение email
+            })
+            .catch(error => console.error('Error fetching user data:', error));
+    }
+    window.onload = fetchUserData;
+</script>
 
 </body>
 </html>
